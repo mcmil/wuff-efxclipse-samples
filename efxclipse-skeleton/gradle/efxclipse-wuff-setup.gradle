@@ -1,0 +1,11 @@
+
+apply plugin: 'org.akhikhl.wuff.eclipse-config'
+
+wuff {
+    eclipseVersion('4.4') {
+        eclipseMavenGroup = 'efxclipse'
+        sources {
+            source 'http://download.eclipse.org/efxclipse/runtime-nightly/site_assembly.zip'
+        }
+    }
+}

@@ -1,4 +1,3 @@
-
 buildscript {
     repositories {
         jcenter()
@@ -11,57 +10,12 @@ buildscript {
     }
 }
 
-apply plugin: 'org.akhikhl.wuff.eclipse-config'
-
-wuff {
-    eclipseVersion('4.4') {
-        eclipseMavenGroup = 'efxclipse'
-        sources {
-            source 'http://download.eclipse.org/efxclipse/runtime-nightly/site_assembly.zip'
-        }
-    }
-}
+apply from: "$rootDir/gradle/efxclipse-wuff-setup.gradle"
 
 project(':app') {
-    apply plugin: 'org.akhikhl.wuff.eclipse-equinox-app'
-
-    configurations {
-        osgiExtension
-    }
-
-    dependencies {
-        osgiExtension "$eclipseMavenGroup:org.eclipse.fx.osgi:+"
-    }
-
-    products {
-        jvmArgs << '-Xmx2048m'
-        jvmArgs << '-Xms1024m'
-
-        launchParameters << '-clearPersistedState'
-        launchParameters << '-application'
-        launchParameters << 'org.eclipse.fx.ui.workbench.fx.application'
-
-        productList  = [['launcher':'windows', 'taskSuffix':'windows', 'fileSuffix':'windows']]
-    }
-
-    run {
-        args = ['-consoleLog', '-console', '5555']
-        args.addAll(products.launchParameters)
-
-        jvmArgs.addAll(products.jvmArgs)
-    }
-
-    afterEvaluate {
-        tasks.prepareRunConfig << {
-            File configIni = file("$buildDir/run/configuration/config.ini")
-            configIni.append "osgi.framework.extensions=reference\\:${configurations.osgiExtension.first().toURI()}"
-        }
-
-        products.jvmArgs << "-Dosgi.framework.extensions=${configurations.osgiExtension.first().getName()}"
-    }
-
+   apply from: "$rootDir/gradle/equinox-app-config.gradle"
 }
 
 subprojects {
-   apply from: "$rootDir/gradle/efxclipse.gradle"
+   apply from: "$rootDir/gradle/efxclipse-dependencies.gradle"
 }

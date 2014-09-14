@@ -1,0 +1,36 @@
+apply plugin: 'org.akhikhl.wuff.eclipse-equinox-app'
+
+configurations {
+    osgiExtension
+}
+
+dependencies {
+    osgiExtension "$eclipseMavenGroup:org.eclipse.fx.osgi:+"
+}
+
+products {
+    jvmArgs << '-Xmx2048m'
+    jvmArgs << '-Xms256m'
+
+    launchParameters << '-clearPersistedState'
+    launchParameters << '-application'
+    launchParameters << 'org.eclipse.fx.ui.workbench.fx.application'
+
+    productList  = [['launcher':'windows', 'taskSuffix':'windows', 'fileSuffix':'windows']]
+}
+
+run {
+    args = ['-consoleLog', '-console', '5555']
+    args.addAll(products.launchParameters)
+
+    jvmArgs.addAll(products.jvmArgs)
+}
+
+afterEvaluate {
+    tasks.prepareRunConfig << {
+        File configIni = file("$buildDir/run/configuration/config.ini")
+        configIni.append "osgi.framework.extensions=reference\\:${configurations.osgiExtension.first().toURI()}"
+    }
+
+    products.jvmArgs << "-Dosgi.framework.extensions=${configurations.osgiExtension.first().getName()}"
+}
