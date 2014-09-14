@@ -1,18 +1,8 @@
-buildscript {
-    repositories {
-        jcenter()
-        mavenCentral()
-        maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local' }
-    }
 
-    dependencies {
-        classpath 'org.akhikhl.wuff:wuff-plugin:0.0.13-SNAPSHOT'
-    }
-}
 
 apply from: "$rootDir/gradle/efxclipse-wuff-setup.gradle"
 
-project(':app') {
+project(':efxclipse-skeleton:pl.cmil.efxclipse.skeleton.app') {
    apply from: "$rootDir/gradle/equinox-app-config.gradle"
 }
 

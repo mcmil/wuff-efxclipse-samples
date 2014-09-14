@@ -13,7 +13,7 @@
             </property>
             <property
                     name="applicationXMI"
-                    value="app/Application.e4xmi">
+                    value="pl.cmil.efxclipse.skeleton.app/Application.e4xmi">
             </property>
             <property
                     name="cssTheme"

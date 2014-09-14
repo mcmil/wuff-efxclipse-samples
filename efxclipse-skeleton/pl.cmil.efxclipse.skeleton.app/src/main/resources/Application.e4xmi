@@ -4,7 +4,7 @@
     <tags>no-decoration#topdecoration.fxml</tags>
     <children xsi:type="basic:PartSashContainer" xmi:id="_SeXUCu8EEd6FC9cDb6iV7g" elementId="_SeXUCu8EEd6FC9cDb6iV7g" horizontal="true">
      <children xsi:type="basic:PartStack" xmi:id="_SeXUC-8EEd6FC9cDb6iV7g" elementId="_SeXUC-8EEd6FC9cDb6iV7g" containerData="30">
-        <children xsi:type="basic:Part" xmi:id="_SeXUDO8EEd6FC9cDb6iV7g" elementId="ContactsView" contributionURI="bundleclass://app/pl.cmil.efxclipse.skeleton.view.SamplePart" label="FX Part" tooltip="FX"/>
+        <children xsi:type="basic:Part" xmi:id="_SeXUDO8EEd6FC9cDb6iV7g" elementId="ContactsView" contributionURI="bundleclass://pl.cmil.efxclipse.skeleton.app/pl.cmil.efxclipse.skeleton.view.SamplePart" label="FX Part" tooltip="FX"/>
      </children>
     </children>
   </children>
