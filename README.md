@@ -8,7 +8,7 @@ The samples presented in this repository are built against the latest snapshot r
 The samples are created to work with [Wuff IntelliJ plugin](https://github.com/mcmil/wuff-intellij-plugin).
 
 ##Samples
-- [efxclipse-skeleton](efxclipse-skeleton) Single module app which contains a window with Part rendered by Java FX. To start it use the following command: `gradlew :efxclipse-skeleton:pl.cmil.efxclipse.skeleton.app:run`
+- [efxclipse-skeleton](efxclipse-skeleton) Single module app which contains a window with Part rendered by Java FX. To start it use the following command: `gradlew :efxclipse-skeleton:pl.cmil.efxclipse.skeleton.app:run`. The `build` task will generate a `.bat` file in the `pl.cmil.efxclipse.skeleton.app\build\output` directory.
 
 Wuff configuration is available in the [gradle directory](gradle) in the root project
 
