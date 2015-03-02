@@ -1,0 +1,24 @@
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local' }
+}
+
+dependencies {
+    runtime 'org.apache.felix:org.apache.felix.webconsole:4.2.2'
+    runtime 'commons-fileupload:commons-fileupload:1.2.1'
+    runtime 'commons-io:commons-io:1.4'
+    runtime 'org.json:json:20070829'
+    runtime 'efxclipse:org.eclipse.jetty.continuation:+'
+    runtime 'efxclipse:org.eclipse.jetty.security:+'
+    runtime 'efxclipse:org.eclipse.jetty.servlet:+'
+    runtime 'efxclipse:org.eclipse.jetty.server:+'
+    runtime 'efxclipse:org.eclipse.jetty.util:+'
+    runtime 'efxclipse:org.eclipse.jetty.io:+'
+    runtime 'efxclipse:org.eclipse.jetty.http:+'
+    runtime 'efxclipse:org.eclipse.equinox.http.servlet:+'
+    runtime 'efxclipse:org.eclipse.equinox.http.registry:+'
+    runtime 'efxclipse:org.apache.commons.logging:+'
+    runtime 'efxclipse:javax.servlet:+'
+    runtime 'efxclipse:org.eclipse.equinox.http.jetty:+'
+}

@@ -7,5 +7,8 @@ project(':efxclipse-skeleton:pl.cmil.efxclipse.skeleton.app') {
 }
 
 subprojects {
+   if(name != 'pl.cmil.efxclipse.skeleton.app') {
+       apply plugin: 'org.akhikhl.wuff.osgi-bundle';
+   }
    apply from: "$rootDir/gradle/efxclipse-dependencies.gradle"
 }

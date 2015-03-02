@@ -6,22 +6,30 @@ configurations {
 
 dependencies {
     osgiExtension "$eclipseMavenGroup:org.eclipse.fx.osgi:+"
+
 }
 
 products {
     jvmArgs << '-Xmx2048m'
     jvmArgs << '-Xms256m'
+    jvmArgs << '-Dorg.osgi.service.http.port=5310'
 
     launchParameters << '-clearPersistedState'
     launchParameters << '-application'
     launchParameters << 'org.eclipse.fx.ui.workbench.fx.application'
 
     productList  = [['launcher':'windows', 'taskSuffix':'windows', 'fileSuffix':'windows']]
+
+    //Web Console
+    autostartedBundles << 'org.eclipse.equinox.http.jetty'
+    autostartedBundles << 'org.apache.felix.webconsole'
 }
 
 run {
     args = ['-consoleLog', '-console', '5555']
     args.addAll(products.launchParameters)
+
+    autostartedBundles.addAll(products.autostartedBundles)
 
     jvmArgs.addAll(products.jvmArgs)
 }
