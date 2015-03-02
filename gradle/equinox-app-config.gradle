@@ -6,7 +6,7 @@ configurations {
 
 dependencies {
     osgiExtension "$eclipseMavenGroup:org.eclipse.fx.osgi:+"
-
+    compile project(':efxclipse-skeleton:pl.cmil.efxclipse.skeleton.module')
 }
 
 products {
@@ -18,7 +18,6 @@ products {
     launchParameters << '-application'
     launchParameters << 'org.eclipse.fx.ui.workbench.fx.application'
 
-    productList  = [['launcher':'windows', 'taskSuffix':'windows', 'fileSuffix':'windows']]
 
     //Web Console
     autostartedBundles << 'org.eclipse.equinox.http.jetty'

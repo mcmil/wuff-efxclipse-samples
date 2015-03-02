@@ -4,17 +4,35 @@ wuff {
     eclipseVersion('efxclipse-1.2') {
         eclipseMavenGroup = 'efxclipse-1_2'
         sources {
-            source 'http://download.eclipse.org/${eclipseMavenGroup}/updates-released/1.2.0/site_assembly.zip'
+            source "http://download.eclipse.org/efxclipse/updates-released/1.2.0/site_assembly.zip"
         }
 
         osgiBundle {
             project.dependencies {
-                compile "${eclipseMavenGroup}:org.eclipse.osgi:+"
+                compile "${eclipseMavenGroup}:javax.inject:+"
+
+                compile "${eclipseMavenGroup}:org.eclipse.core.commands:+"
+                compile "${eclipseMavenGroup}:org.eclipse.core.contenttype:+"
+                compile "${eclipseMavenGroup}:org.eclipse.core.databinding:+"
+                compile "${eclipseMavenGroup}:org.eclipse.core.databinding.beans:+"
+                compile "${eclipseMavenGroup}:org.eclipse.core.databinding.observable:+"
+                compile "${eclipseMavenGroup}:org.eclipse.core.databinding.property:+"
+                compile "${eclipseMavenGroup}:org.eclipse.core.expressions:+"
+                compile "${eclipseMavenGroup}:org.eclipse.core.filesystem:+"
+                compile "${eclipseMavenGroup}:org.eclipse.core.jobs:+"
+                compile "${eclipseMavenGroup}:org.eclipse.core.resources:+"
+                compile "${eclipseMavenGroup}:org.eclipse.e4.core.commands:+"
+                compile "${eclipseMavenGroup}:org.eclipse.e4.core.contexts:+"
+                compile "${eclipseMavenGroup}:org.eclipse.e4.core.di:+"
+                compile "${eclipseMavenGroup}:org.eclipse.e4.core.di.extensions:+"
+                compile "${eclipseMavenGroup}:org.eclipse.e4.core.services:+"
+                compile "${eclipseMavenGroup}:org.eclipse.e4.ui.di:+"
+                compile "${eclipseMavenGroup}:org.eclipse.e4.ui.model.workbench:+"
+                compile "${eclipseMavenGroup}:org.eclipse.e4.ui.services:+"
+                compile "${eclipseMavenGroup}:org.eclipse.e4.ui.workbench:+"
+                compile "${eclipseMavenGroup}:org.eclipse.fx.javafx:+"
             }
 
-            project.tasks.jar.manifest {
-                instruction 'Require-Bundle', 'org.eclipse.osgi'
-            }
         }
 
         equinoxApp {
@@ -37,6 +55,7 @@ wuff {
                 compile "${eclipseMavenGroup}:javax.inject:+"
                 compile "${eclipseMavenGroup}:javax.servlet:+"
                 compile "${eclipseMavenGroup}:javax.xml:+"
+
                 compile "${eclipseMavenGroup}:org.apache.commons.lang:+"
                 compile "${eclipseMavenGroup}:org.eclipse.core.commands:+"
                 compile "${eclipseMavenGroup}:org.eclipse.core.contenttype:+"
@@ -58,6 +77,8 @@ wuff {
                 compile "${eclipseMavenGroup}:org.eclipse.e4.ui.model.workbench:+"
                 compile "${eclipseMavenGroup}:org.eclipse.e4.ui.services:+"
                 compile "${eclipseMavenGroup}:org.eclipse.e4.ui.workbench:+"
+                compile "${eclipseMavenGroup}:org.eclipse.fx.javafx:+"
+
 
                 compile "${eclipseMavenGroup}:org.eclipse.fx.core:+"
                 compile "${eclipseMavenGroup}:org.eclipse.fx.core.databinding:+"
@@ -82,8 +103,6 @@ wuff {
                 compile "${eclipseMavenGroup}:org.eclipse.fx.ui.workbench.renderers.base:+"
                 compile "${eclipseMavenGroup}:org.eclipse.fx.ui.workbench.renderers.fx:+"
                 compile "${eclipseMavenGroup}:org.eclipse.fx.ui.workbench.services:+"
-
-                compile "${eclipseMavenGroup}:org.eclipse.osgi.services:+"
 
                 runtime "${eclipseMavenGroup}:org.eclipse.fx.osgi:+"
                 runtime "${eclipseMavenGroup}:org.eclipse.equinox.console:+"

@@ -1,9 +1,3 @@
-dependencies {
-
-
-    compile "efxclipse:org.eclipse.osgi:+"
-
-}
 
 apply from: "$rootDir/gradle/webconsole.gradle"
 
