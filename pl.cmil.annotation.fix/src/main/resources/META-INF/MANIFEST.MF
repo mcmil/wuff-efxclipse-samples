@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Name: %bundleName
+Bundle-SymbolicName: javax.annotation.fix
+Bundle-Version: 1.2.0
+Export-Package: javax.annotation;version="1.2.0",javax.annotation.secu
+ rity;version="1.2.0",javax.annotation.sql;version="1.2.0"
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Fragment-Host: org.eclipse.osgi;bundle-version="3.10.0"
