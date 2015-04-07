@@ -6,14 +6,14 @@
             point="org.eclipse.core.runtime.products">
         <product
                 application="org.eclipse.fx.ui.workbench.fx.application"
-                name="Efxclipse Demo">
+                name="pl.cmil.wuff.sample">
             <property
                     name="appName"
                     value="e(fx)clipse skeleton">
             </property>
             <property
                     name="applicationXMI"
-                    value="pl.cmil.efxclipse.skeleton.app/Application.e4xmi">
+                    value="pl.cmil.wuff.sample.main/Application.e4xmi">
             </property>
             <property
                     name="cssTheme"

@@ -1,8 +1,3 @@
-rootProject.name = 'efxclipse-wuff-samples'
+rootProject.name = 'pl.cmil.wuff.sample'
 
-include 'efxclipse-skeleton'
-include 'efxclipse-skeleton:pl.cmil.efxclipse.skeleton.app'
-include 'efxclipse-skeleton:pl.cmil.efxclipse.skeleton.module'
-
-
-
+include 'pl.cmil.wuff.sample.main'
