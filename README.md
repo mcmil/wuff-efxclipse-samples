@@ -11,7 +11,7 @@ The samples are created to work with [Wuff IntelliJ plugin](https://github.com/m
 This sample is used to ilustrate the idea of multi-module efxclipse projects with wuff. It contains two elements: 
 
 * [pl.cmil.wuff.sample.main](pl.cmil.wuff.sample.main) A startup module which renders a simple JavaFX part.
-* [pl.cmil.wuff.sample.service](pl.cmil.wuff.sample.service) A simple POJO service.
+* [pl.cmil.wuff.sample.services](pl.cmil.wuff.sample.services) A simple POJO service.
 
 Wuff configuration is available in the [build.gradle](build.gradle) file in the root project.
 
