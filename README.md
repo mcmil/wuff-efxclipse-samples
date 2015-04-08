@@ -17,5 +17,9 @@ Wuff configuration is available in the [build.gradle](build.gradle) file in the 
 
 If you are looking for a barebone, simple application see the [wuff-skeleton](https://github.com/mcmil/wuff-skeleton) sample.
 
+### Starting the samples
+
+To run the application simply download the repository to a desired directory, and run `gradlew run` in it.
+
 ##Requirements
 JDK 1.8.0_u20 or later is required to run the samples.
