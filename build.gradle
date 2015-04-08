@@ -1,52 +1,51 @@
 buildscript {
-    repositories {
-        jcenter()
-        maven {
-            url 'http://dl.bintray.com/mcmil/maven'
-        }
-        maven {
-            url 'http://oss.jfrog.org/artifactory/oss-snapshot-local'
-        }
+  repositories {
+    jcenter()
+    maven {
+      url 'http://dl.bintray.com/mcmil/maven'
     }
+    maven {
+      url 'http://oss.jfrog.org/artifactory/oss-snapshot-local'
+    }
+  }
 
-    dependencies {
-        classpath 'org.akhikhl.wuff:wuff-plugin:0.0.13-efxclipse-alpha2'
-    }
+  dependencies {
+    classpath 'org.akhikhl.wuff:wuff-plugin:0.0.13-efxclipse-alpha3'
+  }
+}
+
+subprojects {
+  repositories {
+    mavenCentral()
+    jcenter()
+  }
 }
 
 
 apply plugin: 'org.akhikhl.wuff.eclipse-config'
 
 wuff {
-    filterManifest = true
-    selectedEclipseVersion = 'efxclipse-1.2'
+  selectedEclipseVersion = 'efxclipse-1.2'
 }
 
-task('wrapper', type: Wrapper) {
-    gradleVersion = '2.3'
-}
 
 project(':pl.cmil.wuff.sample.main') {
-    apply plugin: 'org.akhikhl.wuff.efxclipse-app'
+  apply plugin: 'org.akhikhl.wuff.efxclipse-app'
 
-    dependencies {
-        compile project(':pl.cmil.wuff.sample.services')
-    }
+  dependencies {
+    compile project(':pl.cmil.wuff.sample.services')
+  }
 }
 
 project(':pl.cmil.wuff.sample.services') {
-    apply plugin: 'org.akhikhl.wuff.osgi-bundle'
+  apply plugin: 'org.akhikhl.wuff.osgi-bundle'
 
-    dependencies {
-        compile "efxclipse-1_2:javax.annotation:+"
-        compile 'com.google.guava:guava:18.0'
-    }
+  dependencies {
+    compile 'com.google.guava:guava:18.0'
+  }
 }
 
 
-subprojects {
-    repositories {
-        mavenCentral()
-        jcenter()
-    }
+task('wrapper', type: Wrapper) {
+  gradleVersion = '2.3'
 }

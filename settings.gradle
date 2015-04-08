@@ -3,5 +3,4 @@ rootProject.name = 'pl.cmil.wuff.sample'
 include 'pl.cmil.wuff.sample.main'
 include 'pl.cmil.wuff.sample.services'
 
-include 'pl.cmil.annotation.fix'
 
