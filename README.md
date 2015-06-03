@@ -3,7 +3,7 @@ e(fx)clipse samples for Wuff
 [![Build Status](https://travis-ci.org/mcmil/wuff-efxclipse-samples.svg)](https://travis-ci.org/mcmil/wuff-efxclipse-samples)
 [![Wuff Compatibility](https://img.shields.io/badge/wuff-0.0.14-47b31f.svg)](https://github.com/mcmil/wuff/tree/efxclipse)
 
-The samples presented in this repository are built against the latest build of [Wuff-efxclipse](https://github.com/mcmil/wuff/tree/efxclipse - fork of - https://github.com/akhikhl/wuff). Currently version `0.0.14` is supported. Initially [Contacts-Griffon](https://github.com/tschulte/contacts-griffon) sample application was used as base for their creation.
+The samples presented in this repository are built against the latest build of [Wuff](https://github.com/akhikhl/wuff). Currently version `0.0.14` is supported. Initially [Contacts-Griffon](https://github.com/tschulte/contacts-griffon) sample application was used as base for their creation.
 
 The samples are created to work with [Wuff IntelliJ plugin](https://github.com/mcmil/wuff-intellij-plugin).
 
